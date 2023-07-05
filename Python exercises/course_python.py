@@ -68,21 +68,15 @@ mylist[1]
 
 def lesser_of_two_evens(a,b):
     if a%2 == 0 and b%2 == 0:
-        if a < b:
-            print(a)
-        elif b < a:
-            print(b)
-    elif (a%2 != 0 and b%2 != 0) or (a%2 != 0 and b%2 == 0) or (a%2 == 0 and b%2 != 0):
-        if a > b:
-            print(a)
-        elif b > a:
-            print(b)
+        return (min(a,b))
+    else:
+        return (max(a,b))
     
 
 # Check
 lesser_of_two_evens(2,4)
 # Check
-lesser_of_two_evens(2,5)
+lesser_of_two_evens(2,7)
 
 
 #ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
@@ -124,7 +118,11 @@ makes_twenty(2,3)
 #Note: 'macdonald'.capitalize() returns 'Macdonald'
 
 def old_macdonald(name):
+    #first_half = name [:3]
+    #second_half = name[3:]
+    #return first_half.capitalize() + second_half.capitalize()
     return name[0].upper() + name[1:3] + name[3].upper() + name[4:]
+
 # Check
 old_macdonald('macdonald')
 
@@ -148,34 +146,13 @@ def master_yoda(text):
     my_list.reverse()
     #my_list[0]= my_list[0].capitalize()
     #my_list[-1] = my_list[-1].lower()
-    stri = " ".join(my_list)
-    return stri
+    return " ".join(my_list)
 
 
 # Check
 master_yoda('I am home')
 # Check
 master_yoda('We are ready')
-
-#ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
-#almost_there(90) --> True
-#almost_there(104) --> True
-#almost_there(150) --> False
-#almost_there(209) --> True
-
-# abs(num) returns the absolute value of a number
-
-def almost_there(n):
-    if n in range(0,101) or n > 200:
-        return True
-    return False
-# Check
-almost_there(104)
-# Check
-almost_there(150)
-# Check
-almost_there(209)
-
 
 #FIND 33:
 #Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
@@ -198,5 +175,30 @@ has_33([1, 3, 1, 3])
 # Check
 has_33([3, 1, 3])
 
+#PAPER DOLL: Given a string, return a string where for every character in the original there are three characters
+#paper_doll('Hello') --> 'HHHeeellllllooo'
+#paper_doll('Mississippi') --> 'MMMiiissssssiiippppppiii'
 
+def paper_doll(text):
+    for t in text:
+        print(t*3, end ='')
+
+# Check
+paper_doll('Hello')
+# Check
+paper_doll('Mississippi')
+
+#BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
+#blackjack(5,6,7) --> 18
+#blackjack(9,9,9) --> 'BUST'
+#blackjack(9,9,11) --> 19
+
+def blackjack(a,b,c):
+    pass
+# Check
+blackjack(5,6,7)
+# Check
+blackjack(9,9,9)
+# Check
+blackjack(9,9,11)
     
